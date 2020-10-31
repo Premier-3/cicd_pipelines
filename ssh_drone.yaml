@@ -1,0 +1,17 @@
+kind: pipeline
+type: ssh
+name: ssh_pipeline
+server:
+  host:
+    from_secret: ssh_host
+  user:
+    from_secret: ssh_username
+  password:
+    from_secret: ssh_pwd
+
+steps:
+
+- name: build
+  image: golang:1.13
+  commands:
+    - "go build -o ./myapp"

@@ -1,0 +1,12 @@
+kind: pipeline
+type: exec
+name: exec_pipeline
+  
+steps:
+
+- name: build
+  image: golang:1.13
+  commands:
+    - "go build -o ./myapp"
+
+#add
